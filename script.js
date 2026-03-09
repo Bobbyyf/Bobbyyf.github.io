@@ -1,10 +1,10 @@
 // Bobby's Portfolio — TempleOS Edition
-// Background animation: flying symbols & dithered noise
+// Background animation: flying symbols & dithered noise (black bg, high contrast)
 
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 
-const COLORS = ['#FFFF55', '#55FF55', '#55FFFF', '#FF55FF', '#FF5555', '#FFFFFF', '#FF8800', '#55FF88'];
+const COLORS = ['#FFFF55', '#55FF55', '#55FFFF', '#FF55FF', '#FF5555', '#FF8800', '#55FF88', '#FFAAFF', '#88FFFF', '#FFFF00'];
 const GLYPHS = '†‡✝☩♱◆◇■□▲△▼▽★☆═║╔╗╚╝╠╣╦╩✟₊×+~@#%&';
 
 let w, h;
@@ -24,28 +24,28 @@ function randGlyph() {
   return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
 }
 
-// Flying symbols — more of them, bigger range
-for (let i = 0; i < 50; i++) {
+// Flying symbols
+for (let i = 0; i < 60; i++) {
   symbols.push({
     x: Math.random() * 2000,
     y: Math.random() * 4000,
-    speed: 0.2 + Math.random() * 1.0,
+    speed: 0.2 + Math.random() * 1.2,
     glyph: randGlyph(),
     color: randColor(),
-    size: 12 + Math.floor(Math.random() * 20),
+    size: 12 + Math.floor(Math.random() * 22),
     drift: (Math.random() - 0.5) * 0.5,
     pulse: Math.random() * Math.PI * 2,
-    pulseSpeed: 0.01 + Math.random() * 0.03
+    pulseSpeed: 0.01 + Math.random() * 0.04
   });
 }
 
-// Noise pixels — more, bolder
-for (let i = 0; i < 200; i++) {
+// Noise pixels
+for (let i = 0; i < 250; i++) {
   noisePixels.push({
     x: Math.random() * 2000,
     y: Math.random() * 4000,
     timer: Math.random() * 100,
-    rate: 30 + Math.random() * 100,
+    rate: 20 + Math.random() * 80,
     size: 1 + Math.floor(Math.random() * 3)
   });
 }
@@ -53,7 +53,7 @@ for (let i = 0; i < 200; i++) {
 function draw() {
   ctx.clearRect(0, 0, w, h);
 
-  // Sparse dither noise
+  // Noise
   for (const p of noisePixels) {
     p.timer++;
     if (p.timer > p.rate) {
@@ -62,11 +62,11 @@ function draw() {
       p.timer = 0;
     }
     ctx.fillStyle = randColor();
-    ctx.globalAlpha = 0.3;
+    ctx.globalAlpha = 0.4;
     ctx.fillRect(p.x, p.y, p.size, p.size);
   }
 
-  // Flying symbols with pulsing opacity
+  // Symbols with glow
   for (const s of symbols) {
     s.y -= s.speed;
     s.x += s.drift;
@@ -81,14 +81,16 @@ function draw() {
     if (s.x < -30) s.x = w + 30;
     if (s.x > w + 30) s.x = -30;
 
-    // Pulse between 0.15 and 0.45
-    const alpha = 0.3 + Math.sin(s.pulse) * 0.15;
+    const alpha = 0.4 + Math.sin(s.pulse) * 0.2;
     ctx.globalAlpha = alpha;
     ctx.fillStyle = s.color;
+    ctx.shadowColor = s.color;
+    ctx.shadowBlur = 10;
     ctx.font = s.size + 'px "IBM Plex Mono", monospace';
     ctx.fillText(s.glyph, s.x, s.y);
   }
 
+  ctx.shadowBlur = 0;
   ctx.globalAlpha = 1.0;
   requestAnimationFrame(draw);
 }
