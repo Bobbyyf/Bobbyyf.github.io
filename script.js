@@ -98,3 +98,21 @@ function draw() {
 window.addEventListener('resize', resize);
 resize();
 draw();
+
+// ── Active nav link on scroll ──
+const navLinks = document.querySelectorAll('.top-nav a');
+const sections = ['about', 'skills', 'experience', 'projects', 'contact'].map(id => document.getElementById(id));
+
+function updateNav() {
+  const scrollY = window.scrollY + 80;
+  let current = sections[0];
+  for (const sec of sections) {
+    if (sec && sec.offsetTop <= scrollY) current = sec;
+  }
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + (current ? current.id : ''));
+  });
+}
+
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();

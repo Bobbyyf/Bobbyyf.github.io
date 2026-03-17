@@ -24,10 +24,16 @@
 
   <div class="top-bar">
     <span>Bobby::Portfolio v1.0</span>
-    <span>SDSU — CS — Senior</span>
+    <nav class="top-nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 
-  <div class="hero">
+  <div id="about" class="hero">
     <h1>About Me</h1>
     <div class="about">
       CS major and senior at SDSU. Experience building web applications, cloud computing, system administration, and embedded systems.
@@ -35,57 +41,189 @@
     <div class="status">[STATUS: OPEN TO WORK]</div>
   </div>
 
-  <div class="section-heading">Projects</div>
+  <!-- ── Skills ── -->
+  <div id="skills">
+    <div class="section-heading">Skills</div>
 
-  <div class="project-card">
-    <div class="card-title">Cloud Computing — Load Balancer</div>
-    <div class="card-body">
-      Built a load balancer capable of dynamically scaling workers up and down based on real-time workload demand.
-    </div>
-    <div class="card-tags">
-      <span class="tag">Docker</span>
-      <span class="tag">Flask</span>
-      <span class="tag">Autoscaling</span>
-      <span class="tag">Distributed Systems</span>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">C++</span>
+          <span class="tag">Java</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Bash</span>
+          <span class="tag">CUDA C++</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Frameworks</div>
+        <div class="skill-tags">
+          <span class="tag">Flask</span>
+          <span class="tag">React</span>
+          <span class="tag">ROS2</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Tools &amp; Technologies</div>
+        <div class="skill-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Git</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">GitHub API</span>
+          <span class="tag">SQLite</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Virtualization &amp; Networking</div>
+        <div class="skill-tags">
+          <span class="tag">Proxmox</span>
+          <span class="tag">VM Configuration</span>
+          <span class="tag">IPv4/IPv6</span>
+          <span class="tag">DNS Administration</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Operating Systems</div>
+        <div class="skill-tags">
+          <span class="tag">OpenBSD</span>
+          <span class="tag">FreeBSD</span>
+          <span class="tag">Ubuntu</span>
+          <span class="tag">Alma Linux</span>
+          <span class="tag">Solaris</span>
+          <span class="tag">Alpine</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="project-card">
-    <div class="card-title">Home Lab — Small Business Infrastructure</div>
-    <div class="card-body">
-      Built the infrastructure of a small business including a mail server, a password vault through Docker, certificate administration, and VM management through Proxmox with a wide array of Unix/Linux operating systems.
-    </div>
-    <div class="card-tags">
-      <span class="tag">Proxmox</span>
-      <span class="tag">Docker</span>
-      <span class="tag">Linux</span>
-      <span class="tag">Sysadmin</span>
+  <!-- ── Experience / Education ── -->
+  <div id="experience">
+    <div class="section-heading">Experience &amp; Education</div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Aug 2025 — Present</div>
+        <div class="timeline-content">
+          <div class="timeline-title">F1TENTH Autonomous Racing — Capstone Engineer</div>
+          <div class="timeline-body">
+            Operated under Agile/Scrum methodology across four 4-week sprints with weekly pushes and sprint reviews. Developed and deployed a Pure Pursuit controller on physical hardware achieving sustained speeds of 4 m/s. Prototyped a YOLO-based perception pipeline integrated into a ROS2 stack for real-time opponent detection and rule-based overtaking activation.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Summer 2025</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Software Engineering Intern — Thirdsight.AI</div>
+          <div class="timeline-body">
+            Built a full-stack web application with a React frontend and Flask backend, enabling seamless data integration. Improved UI responsiveness through custom frontend controls in React and vanilla JavaScript.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Summer 2025</div>
+        <div class="timeline-content">
+          <div class="timeline-title">GPU Scheduler Policy — Undergraduate Research | CSI Lab</div>
+          <div class="timeline-body">
+            Implemented a novel GPU partition scheduling policy on a Linux-based NVIDIA Jetson platform targeting real-time execution variance reduction across concurrent compute kernels. Analyzed 20+ academic papers and recreated baseline scheduling policies in CUDA C++ for empirical comparison.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Expected May 2026</div>
+        <div class="timeline-content">
+          <div class="timeline-title">B.S. Computer Science — San Diego State University</div>
+          <div class="timeline-body">
+            Coursework spanning cloud computing, operating systems, distributed systems, embedded systems, and GPU architecture.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="project-card">
-    <div class="card-title">Web Apps — Hackathon &amp; Cloud Projects</div>
-    <div class="card-body">
-      Built multiple web applications using Flask and React to create interactive and efficient websites for hackathons and cloud computing projects.
+  <!-- ── Projects ── -->
+  <div id="projects">
+    <div class="section-heading">Projects</div>
+
+    <div class="project-card">
+      <div class="card-title">Distributed Systems &amp; Cloud Infrastructure</div>
+      <div class="card-body">
+        Built a horizontally scaling web infrastructure using Docker, a Flask load balancer, and an autoscaler with configurable latency thresholds. Implemented quorum-based strong consistency and gossip-based eventual consistency from scratch, analyzing CAP theorem tradeoffs.
+      </div>
+      <div class="card-footer">
+        <div class="card-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Distributed Systems</span>
+          <span class="tag">CAP Theorem</span>
+        </div>
+      </div>
     </div>
-    <div class="card-tags">
-      <span class="tag">Flask</span>
-      <span class="tag">React</span>
-      <span class="tag">Python</span>
-      <span class="tag">JavaScript</span>
+
+    <div class="project-card">
+      <div class="card-title">CTRL Code Jam — CI/CD Competition Pipeline</div>
+      <div class="card-body">
+        Leading a team of four building a fully CI/CD-driven competition grading pipeline using GitHub Actions and GitHub Classroom, replacing a traditional web backend. Authored multi-language grading scripts in Bash (Python, Java, C++) with timeout enforcement, compilation error handling, and standardized exit codes. Architected a staged competition system with automated team advancement via the GitHub API.
+      </div>
+      <div class="card-footer">
+        <div class="card-tags">
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">GitHub API</span>
+          <span class="tag">Bash</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="card-title">Small Business Infrastructure — Sysadmin</div>
+      <div class="card-body">
+        Deployed a multi-VM environment using Proxmox, configuring guest/host relationships across OpenBSD, Ubuntu, and Solaris instances. Administered a production-grade mail server, SSL certificate exporter, and self-hosted password vault across isolated VMs. Managed IPv4/IPv6 networking and DNS across all hosted services.
+      </div>
+      <div class="card-footer">
+        <div class="card-tags">
+          <span class="tag">Proxmox</span>
+          <span class="tag">OpenBSD</span>
+          <span class="tag">Solaris</span>
+          <span class="tag">DNS</span>
+          <span class="tag">SSL</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="project-card">
-    <div class="card-title">Embedded Systems — F1TENTH Autonomous Racing</div>
-    <div class="card-body">
-      Programmed and developed novel overtaking and path following algorithms for F1TENTH, and translated over to real life for a max speed of 4 m/s.
-    </div>
-    <div class="card-tags">
-      <span class="tag">ROS2</span>
-      <span class="tag">Python</span>
-      <span class="tag">YOLO</span>
-      <span class="tag">Control Systems</span>
+  <!-- ── Contact ── -->
+  <div id="contact">
+    <div class="section-heading">Contact</div>
+
+    <div class="contact-card">
+      <div class="contact-line">
+        <span class="contact-label">// Email</span>
+        <a class="contact-link" href="mailto:robert.louis.fuller@gmail.com">robert.louis.fuller@gmail.com</a>
+      </div>
+      <div class="contact-line">
+        <span class="contact-label">// GitHub</span>
+        <a class="contact-link" href="https://github.com/Bobbyyf" target="_blank" rel="noopener">github.com/Bobbyyf</a>
+      </div>
+      <div class="contact-line">
+        <span class="contact-label">// LinkedIn</span>
+        <a class="contact-link" href="https://www.linkedin.com/in/robert-louis-fuller/" target="_blank" rel="noopener">linkedin.com/in/robert-louis-fuller/</a>
+      </div>
+      <div class="contact-line">
+        <span class="contact-label">// Resume</span>
+        <a class="contact-link" href="content/robert_fuller_updated.pdf" target="_blank">[Download PDF]</a>
+      </div>
     </div>
   </div>
 
