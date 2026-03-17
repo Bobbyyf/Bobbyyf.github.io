@@ -64,6 +64,8 @@ body {
 .ascii-header {
   margin-bottom: 24px;
   text-align: center;
+  user-select: none;
+  cursor: default;
 }
 
 .ascii-header pre {

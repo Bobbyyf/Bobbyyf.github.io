@@ -25,7 +25,7 @@ function randGlyph() {
 }
 
 // Flying symbols
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 250; i++) {
   symbols.push({
     x: Math.random() * 2000,
     y: Math.random() * 4000,
